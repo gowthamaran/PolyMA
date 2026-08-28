@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PolyMA Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div><span class="mark">P</span><strong>PolyMA Lab</strong><small>15-minute strategy research</small></div>
+    <span class="paper">PAPER TRADING ONLY</span>
+  </header>
+  <nav>
+    <button data-page="overview" class="active">Overview</button>
+    <button data-page="scanner">Live Scanner</button>
+    <button data-page="signals">Signals</button>
+    <button data-page="trades">Trades</button>
+    <button data-page="markets">Markets</button>
+    <button data-page="analysis">Strategy Analysis</button>
+    <button data-page="settings">Settings</button>
+  </nav>
+  <main>
+    <section id="overview" class="page active">
+      <div class="banner">RESEARCH MODE — no wallet, private key, or real order capability exists</div>
+      <div id="cards" class="cards"></div>
+      <div class="panel"><h2>Volume threshold lab</h2><div id="variant-bars" class="bars"></div><div id="variants"></div></div>
+    </section>
+    <section id="scanner" class="page"><div class="panel"><h2>Latest market candles</h2><p class="muted">Real trades are labelled REAL_TRADE_VOLUME. Sampled price fallbacks show UNAVAILABLE volume.</p><div id="scanner-table"></div></div></section>
+    <section id="signals" class="page"><div class="panel"><h2>Signal history</h2><div class="filters"><select id="status-filter"><option value="">All results</option><option>WIN</option><option>LOSS</option><option>NEUTRAL</option><option>PENDING</option><option>INVALID</option></select><select id="asset-filter"><option value="">All assets</option><option>BTC</option><option>ETH</option><option>SOL</option><option>XRP</option></select></div><div id="signals-table"></div></div></section>
+    <section id="trades" class="page"><div class="panel"><h2>Virtual positions</h2><p class="muted">Simulated complementary-outcome fills with explicit execution assumptions.</p><div id="trades-table"></div></div></section>
+    <section id="markets" class="page"><div class="panel"><h2>Discovered markets</h2><div id="markets-table"></div></div></section>
+    <section id="analysis" class="page"><div class="panel"><h2>Research interpretation</h2><div id="analysis-content"></div><h3>Historical runs</h3><div id="backtests"></div></div></section>
+    <section id="settings" class="page"><div class="panel"><h2>Sanitized settings</h2><pre id="settings-json"></pre></div></section>
+  </main>
+  <footer>PolyMA Lab does not place or authorize real-money trades.</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+

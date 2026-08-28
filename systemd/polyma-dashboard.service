@@ -1,0 +1,22 @@
+[Unit]
+Description=PolyMA Lab local dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__POLYMA_USER__
+WorkingDirectory=__POLYMA_DIR__
+EnvironmentFile=__POLYMA_DIR__/.env
+ExecStart=__POLYMA_DIR__/.venv/bin/python main.py dashboard
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=__POLYMA_DIR__/data __POLYMA_DIR__/logs __POLYMA_DIR__/exports
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
+
